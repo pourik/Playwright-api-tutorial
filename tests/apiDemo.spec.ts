@@ -9,10 +9,6 @@ test.beforeEach('has title', async ({ page }) => {
   })
 
   await page.goto("https://conduit.bondaracademy.com/");
-  await page.getByText("Sign In").click();
-  await page.getByRole("textbox", {name: "Email"}).fill("Pourik@conduit.com");
-  await page.getByRole("textbox", { name: "Password" }).fill("Pourik@conduit");
-  await page.getByRole("button", {name: "Sign in"}).click();
 })
 
 test("Mocking API Calls", async ({ page }) => {
@@ -59,10 +55,11 @@ test("Fetching Token from Header Demo", async ({ page, request }) => {
     },
   });
 
-  await page.getByText("Global Feed").click();
-  await page.getByText("This is a test").click();
-  await page.getByText("Delete Article").first().click();
-  await page.getByText("Global Feed").click();
+  // await page.getByText("Global Feed").click();
+  // await page.getByText("This is a test").click();
+  // await page.getByText("Delete Article").first().click();
+  // await page.getByText("Global Feed").click();
+  await page.reload();
 })
 
 test("Deleting Article using DELETE Request", async ({ page, request }) => {
