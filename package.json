@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test-script-firefox": "npx playwright test apiDemo.spec.ts --project=firefox",
+    "test-script-chromium": "npx playwright test apiDemo.spec.ts --project=chromium",
+    "test-script-parallel": "npm run test-script-firefox & npm run test-script-chromium"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pourik/Playwright-api-tutorial.git"
