@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import tags from '../test-data/tags.json';
 
-test.beforeEach('has title', async ({ page }) => {
+test.beforeEach('Testing Body Change', async ({ page }) => {
   await page.route("*/**/api/tags", async route => {
     await route.fulfill({
       body: JSON.stringify(tags)
